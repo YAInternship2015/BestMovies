@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SANTableViewController.h
 //  BestMovies
 //
 //  Created by Admin on 09.08.15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SANTableViewController : UITableViewController
 
 @end
-

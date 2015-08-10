@@ -9,11 +9,25 @@
 /* Begin PBXBuildFile section */
 		843EF4DE1B76A5E300BB3D72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF4DD1B76A5E300BB3D72 /* main.m */; };
 		843EF4E11B76A5E300BB3D72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF4E01B76A5E300BB3D72 /* AppDelegate.m */; };
-		843EF4E41B76A5E300BB3D72 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF4E31B76A5E300BB3D72 /* ViewController.m */; };
 		843EF4E71B76A5E300BB3D72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843EF4E51B76A5E300BB3D72 /* Main.storyboard */; };
 		843EF4E91B76A5E300BB3D72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843EF4E81B76A5E300BB3D72 /* Images.xcassets */; };
 		843EF4EC1B76A5E300BB3D72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843EF4EA1B76A5E300BB3D72 /* LaunchScreen.xib */; };
 		843EF4F81B76A5E300BB3D72 /* BestMoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF4F71B76A5E300BB3D72 /* BestMoviesTests.m */; };
+		843EF5031B76A61A00BB3D72 /* SANTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF5021B76A61A00BB3D72 /* SANTableViewController.m */; };
+		843EF5061B76A67A00BB3D72 /* SANMoviesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF5051B76A67A00BB3D72 /* SANMoviesCell.m */; };
+		843EF5091B76A8D100BB3D72 /* SANMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF5081B76A8D100BB3D72 /* SANMovie.m */; };
+		843EF5171B76A98C00BB3D72 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 843EF50D1B76A98C00BB3D72 /* 1.jpg */; };
+		843EF5181B76A98C00BB3D72 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 843EF50E1B76A98C00BB3D72 /* 2.jpg */; };
+		843EF5191B76A98C00BB3D72 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 843EF50F1B76A98C00BB3D72 /* 3.jpg */; };
+		843EF51A1B76A98C00BB3D72 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 843EF5101B76A98C00BB3D72 /* 4.jpg */; };
+		843EF51B1B76A98C00BB3D72 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 843EF5111B76A98C00BB3D72 /* 5.jpg */; };
+		843EF51C1B76A98C00BB3D72 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 843EF5121B76A98C00BB3D72 /* 6.jpg */; };
+		843EF51D1B76A98C00BB3D72 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 843EF5131B76A98C00BB3D72 /* 7.jpg */; };
+		843EF51E1B76A98C00BB3D72 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 843EF5141B76A98C00BB3D72 /* 8.jpg */; };
+		843EF51F1B76A98C00BB3D72 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 843EF5151B76A98C00BB3D72 /* 9.jpg */; };
+		843EF5201B76A98C00BB3D72 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 843EF5161B76A98C00BB3D72 /* 10.jpg */; };
+		84584B8F1B77FCDB004E36FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 84584B8E1B77FCDB004E36FB /* .gitignore */; };
+		8465554B1B774EDD00DC31C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8465554A1B774EDD00DC31C4 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +46,30 @@
 		843EF4DD1B76A5E300BB3D72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		843EF4DF1B76A5E300BB3D72 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		843EF4E01B76A5E300BB3D72 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		843EF4E21B76A5E300BB3D72 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		843EF4E31B76A5E300BB3D72 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		843EF4E61B76A5E300BB3D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		843EF4E81B76A5E300BB3D72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		843EF4EB1B76A5E300BB3D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		843EF4F11B76A5E300BB3D72 /* BestMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		843EF4F61B76A5E300BB3D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843EF4F71B76A5E300BB3D72 /* BestMoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BestMoviesTests.m; sourceTree = "<group>"; };
+		843EF5011B76A61A00BB3D72 /* SANTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANTableViewController.h; sourceTree = "<group>"; };
+		843EF5021B76A61A00BB3D72 /* SANTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANTableViewController.m; sourceTree = "<group>"; };
+		843EF5041B76A67A00BB3D72 /* SANMoviesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANMoviesCell.h; sourceTree = "<group>"; };
+		843EF5051B76A67A00BB3D72 /* SANMoviesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANMoviesCell.m; sourceTree = "<group>"; };
+		843EF5071B76A8D100BB3D72 /* SANMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANMovie.h; sourceTree = "<group>"; };
+		843EF5081B76A8D100BB3D72 /* SANMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANMovie.m; sourceTree = "<group>"; };
+		843EF50D1B76A98C00BB3D72 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		843EF50E1B76A98C00BB3D72 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		843EF50F1B76A98C00BB3D72 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		843EF5101B76A98C00BB3D72 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		843EF5111B76A98C00BB3D72 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		843EF5121B76A98C00BB3D72 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		843EF5131B76A98C00BB3D72 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
+		843EF5141B76A98C00BB3D72 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
+		843EF5151B76A98C00BB3D72 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
+		843EF5161B76A98C00BB3D72 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
+		84584B8E1B77FCDB004E36FB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8465554A1B774EDD00DC31C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8465554B1B774EDD00DC31C4 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,9 +94,11 @@
 		843EF4CF1B76A5E300BB3D72 = {
 			isa = PBXGroup;
 			children = (
+				84584B8E1B77FCDB004E36FB /* .gitignore */,
 				843EF4DA1B76A5E300BB3D72 /* BestMovies */,
 				843EF4F41B76A5E300BB3D72 /* BestMoviesTests */,
 				843EF4D91B76A5E300BB3D72 /* Products */,
+				8465554D1B774FD100DC31C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,8 +116,10 @@
 			children = (
 				843EF4DF1B76A5E300BB3D72 /* AppDelegate.h */,
 				843EF4E01B76A5E300BB3D72 /* AppDelegate.m */,
-				843EF4E21B76A5E300BB3D72 /* ViewController.h */,
-				843EF4E31B76A5E300BB3D72 /* ViewController.m */,
+				843EF50A1B76A92500BB3D72 /* Resources */,
+				846555501B7753EA00DC31C4 /* ViewControllers */,
+				8465554E1B7753D400DC31C4 /* Cells */,
+				8465554F1B7753DF00DC31C4 /* Models */,
 				843EF4E51B76A5E300BB3D72 /* Main.storyboard */,
 				843EF4E81B76A5E300BB3D72 /* Images.xcassets */,
 				843EF4EA1B76A5E300BB3D72 /* LaunchScreen.xib */,
@@ -117,6 +152,74 @@
 				843EF4F61B76A5E300BB3D72 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		843EF50A1B76A92500BB3D72 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				843EF50B1B76A94400BB3D72 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		843EF50B1B76A94400BB3D72 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				843EF50C1B76A94F00BB3D72 /* Common */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		843EF50C1B76A94F00BB3D72 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				843EF50D1B76A98C00BB3D72 /* 1.jpg */,
+				843EF50E1B76A98C00BB3D72 /* 2.jpg */,
+				843EF50F1B76A98C00BB3D72 /* 3.jpg */,
+				843EF5101B76A98C00BB3D72 /* 4.jpg */,
+				843EF5111B76A98C00BB3D72 /* 5.jpg */,
+				843EF5121B76A98C00BB3D72 /* 6.jpg */,
+				843EF5131B76A98C00BB3D72 /* 7.jpg */,
+				843EF5141B76A98C00BB3D72 /* 8.jpg */,
+				843EF5151B76A98C00BB3D72 /* 9.jpg */,
+				843EF5161B76A98C00BB3D72 /* 10.jpg */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		8465554D1B774FD100DC31C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8465554A1B774EDD00DC31C4 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8465554E1B7753D400DC31C4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				843EF5041B76A67A00BB3D72 /* SANMoviesCell.h */,
+				843EF5051B76A67A00BB3D72 /* SANMoviesCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		8465554F1B7753DF00DC31C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				843EF5071B76A8D100BB3D72 /* SANMovie.h */,
+				843EF5081B76A8D100BB3D72 /* SANMovie.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		846555501B7753EA00DC31C4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				843EF5011B76A61A00BB3D72 /* SANTableViewController.h */,
+				843EF5021B76A61A00BB3D72 /* SANTableViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +302,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843EF5201B76A98C00BB3D72 /* 10.jpg in Resources */,
+				843EF51E1B76A98C00BB3D72 /* 8.jpg in Resources */,
+				843EF51C1B76A98C00BB3D72 /* 6.jpg in Resources */,
 				843EF4E71B76A5E300BB3D72 /* Main.storyboard in Resources */,
+				843EF51B1B76A98C00BB3D72 /* 5.jpg in Resources */,
+				843EF51A1B76A98C00BB3D72 /* 4.jpg in Resources */,
+				843EF5171B76A98C00BB3D72 /* 1.jpg in Resources */,
+				843EF5181B76A98C00BB3D72 /* 2.jpg in Resources */,
+				84584B8F1B77FCDB004E36FB /* .gitignore in Resources */,
+				843EF5191B76A98C00BB3D72 /* 3.jpg in Resources */,
+				843EF51D1B76A98C00BB3D72 /* 7.jpg in Resources */,
+				843EF51F1B76A98C00BB3D72 /* 9.jpg in Resources */,
 				843EF4EC1B76A5E300BB3D72 /* LaunchScreen.xib in Resources */,
 				843EF4E91B76A5E300BB3D72 /* Images.xcassets in Resources */,
 			);
@@ -219,9 +333,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843EF4E41B76A5E300BB3D72 /* ViewController.m in Sources */,
 				843EF4E11B76A5E300BB3D72 /* AppDelegate.m in Sources */,
+				843EF5031B76A61A00BB3D72 /* SANTableViewController.m in Sources */,
 				843EF4DE1B76A5E300BB3D72 /* main.m in Sources */,
+				843EF5091B76A8D100BB3D72 /* SANMovie.m in Sources */,
+				843EF5061B76A67A00BB3D72 /* SANMoviesCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +463,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				INFOPLIST_FILE = BestMovies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,6 +477,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				INFOPLIST_FILE = BestMovies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +540,7 @@
 				843EF4FD1B76A5E300BB3D72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		843EF4FE1B76A5E300BB3D72 /* Build configuration list for PBXNativeTarget "BestMoviesTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +549,7 @@
 				843EF5001B76A5E300BB3D72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
