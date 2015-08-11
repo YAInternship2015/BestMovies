@@ -10,12 +10,11 @@
 
 @implementation SANMovie
 
-- (instancetype)initWithImage:(UIImage*)image andName:(NSString*)name
-{
+- (instancetype)initWithImage:(UIImage *)image name:(NSString *)name{
     self = [super init];
     if (self) {
-        self.avatarImage = image;
-        self.name = name;
+        _avatarImage = image;
+        _name = name;
     }
     return self;
 }

@@ -7,42 +7,30 @@
 //
 
 #import "SANTableViewController.h"
-#import "SANMovie.h"
+#import "SANDataSource.h"
 #import "SANMoviesCell.h"
 
 @interface SANTableViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) NSMutableArray *arrayMovies;
+
 @end
 
 @implementation SANTableViewController
 
-static NSString* movies[] = {
-    @"Transformers", @"Terminator", @"Bruce Lee", @"Men in Bleck",
-    @"Superman", @"Hulk", @"Riddick", @"Batman", @"X-man", @"Faster"
-};
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.arrayMovies = [NSMutableArray new];
-    for (int i = 0; i < 10; i++) {
-        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",i + 1]];
-        SANMovie *movie = [[SANMovie alloc]initWithImage:image andName:movies[i]];
-        [self.arrayMovies addObject:movie];
-    }
+  
 }
 
 #pragma mark -  UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.arrayMovies count];
+    return [[SANDataSource sharedManager].arrayMovies count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"cell";
-    SANMovie *movie = [self.arrayMovies objectAtIndex:indexPath.row];
-    SANMoviesCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    cell.imageView.image = movie.avatarImage;
-    cell.nameLabel.text = movie.name;
+    SANMoviesCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    [cell setupWithMovie:[[SANDataSource sharedManager].arrayMovies objectAtIndex:indexPath.row]];
     return cell;
 }
 

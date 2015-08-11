@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SANMovie.h"
 
 @interface SANMoviesCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+- (void)setupWithMovie:(SANMovie *)movie;
 
 @end

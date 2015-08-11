@@ -8,10 +8,17 @@
 
 #import "SANMoviesCell.h"
 
+@interface SANMoviesCell()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@end
+
 @implementation SANMoviesCell
 @synthesize imageView = _imageView;
-- (void)awakeFromNib {
-    // Initialization code
+
+- (void)setupWithMovie:(SANMovie *)movie{
+    self.imageView.image = movie.avatarImage;
+    self.nameLabel.text = movie.name;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

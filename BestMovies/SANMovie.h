@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface SANMovie : NSObject
-@property (strong, nonatomic) UIImage *avatarImage;
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic, readonly) UIImage *avatarImage;
+@property (strong, nonatomic, readonly) NSString *name;
 
-- (instancetype)initWithImage:(UIImage*)image andName:(NSString*)name;
+- (instancetype)initWithImage:(UIImage *)image name:(NSString *)name;
 
 @end
