@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface SANMovie : NSObject
+#warning (nonatomic, strong, readonly)
 @property (strong, nonatomic, readonly) UIImage *avatarImage;
 @property (strong, nonatomic, readonly) NSString *name;
 

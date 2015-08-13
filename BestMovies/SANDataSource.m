@@ -14,6 +14,7 @@
 
 @implementation SANDataSource
 
+#warning Синглтон - это антипаттерн, его стоит использовать только в исключительных ситуациях. В данной проекте достаточно создавать датасорс там, где он необходим, то есть во вью контроллере
 + (SANDataSource *)sharedManager{
     static SANDataSource *manager = nil;
     static dispatch_once_t onceToken;
@@ -23,6 +24,7 @@
     return manager;
 }
 
+#warning перед { должен быть пробел
 - (instancetype)init{
     self = [super init];
     if (self) {
