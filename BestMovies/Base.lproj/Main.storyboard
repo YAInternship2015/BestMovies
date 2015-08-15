@@ -26,13 +26,18 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uhf-hc-007">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uhf-hc-007">
                                             <rect key="frame" x="15" y="5" width="70" height="70"/>
                                             <color key="backgroundColor" red="0.037583530221780515" green="0.0011317555262465584" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="AUi-Fa-jrH"/>
                                                 <constraint firstAttribute="height" constant="70" id="z0o-f6-e4t"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="35"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -45,7 +50,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageView" destination="Uhf-hc-007" id="G1u-Eh-YFa"/>
+                                    <outlet property="imgView" destination="Uhf-hc-007" id="gYa-gf-XzQ"/>
                                     <outlet property="nameLabel" destination="a3w-TD-34R" id="c6T-tt-kYV"/>
                                 </connections>
                             </tableViewCell>

@@ -12,25 +12,27 @@
 
 @interface SANTableViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) SANDataSource *data;
+
 @end
 
 @implementation SANTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    self.data = [SANDataSource new];
 }
 
 #pragma mark -  UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [[SANDataSource sharedManager].arrayMovies count];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [[self.data allMovies] count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"cell";
     SANMoviesCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    [cell setupWithMovie:[[SANDataSource sharedManager].arrayMovies objectAtIndex:indexPath.row]];
+    [cell setupWithMovie:[[self.data allMovies] objectAtIndex:indexPath.row]];
     return cell;
 }
 
