@@ -7,6 +7,7 @@
 //
 
 #import "SANDataSource.h"
+#import "SANMovie.h"
 
 @interface SANDataSource ()
 

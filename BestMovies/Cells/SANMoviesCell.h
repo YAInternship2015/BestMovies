@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SANMovie.h"
+
+@class SANMovie;
 
 @interface SANMoviesCell : UITableViewCell
 

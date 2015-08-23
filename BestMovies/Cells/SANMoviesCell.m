@@ -7,6 +7,7 @@
 //
 
 #import "SANMoviesCell.h"
+#import "SANMovie.h"
 
 @interface SANMoviesCell()
 

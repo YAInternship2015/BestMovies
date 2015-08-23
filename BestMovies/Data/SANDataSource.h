@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SANMovie.h"
 
 @interface SANDataSource : NSObject
 
