@@ -8,10 +8,7 @@
 
 #import "SANDataSource.h"
 #import "SANMovie.h"
-<<<<<<< HEAD
 #import "SANNotifier.h"
-=======
->>>>>>> 27c32398648f480c9f544dd03ca5aaa6c3511daa
 
 @interface SANDataSource() 
 
