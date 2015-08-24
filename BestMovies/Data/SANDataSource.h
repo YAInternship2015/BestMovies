@@ -7,10 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SANMovie.h"
+
+@class SANMovie;
+
+@protocol SANModelsDataSourceDelegate;
 
 @interface SANDataSource : NSObject
 
 - (NSArray *)allMovies;
+- (void)saveModel:(SANMovie *)model;
+- (instancetype)initWithDelegate:(id<SANModelsDataSourceDelegate>)delegate;
+
+@end
+
+
+
+
+
+
+
+@protocol SANModelsDataSourceDelegate <NSObject>
+@required
+
+- (void)dataWasChanged:(SANDataSource *)data array:(NSArray *)array;
 
 @end

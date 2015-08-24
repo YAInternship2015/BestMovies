@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>names</key>
+	<array>
+		<string>Transformers</string>
+		<string>Terminator</string>
+		<string>Bruce Lee</string>
+		<string>Men in Bleck</string>
+		<string>Superman</string>
+		<string>Hulk</string>
+		<string>Riddick</string>
+		<string>Batman</string>
+		<string>X-man</string>
+		<string>Faster</string>
+	</array>
+	<key>images</key>
+	<array>
+		<string>1.jpg</string>
+		<string>2.jpg</string>
+		<string>3.jpg</string>
+		<string>4.jpg</string>
+		<string>5.jpg</string>
+		<string>6.jpg</string>
+		<string>7.jpg</string>
+		<string>8.jpg</string>
+		<string>9.jpg</string>
+		<string>10.jpg</string>
+	</array>
+</dict>
+</plist>

@@ -21,6 +21,14 @@
 		84251CFA1B7FD0A9005F646C /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84251CEA1B7FD0A9005F646C /* 8.jpg */; };
 		84251CFB1B7FD0A9005F646C /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84251CEB1B7FD0A9005F646C /* 9.jpg */; };
 		84251CFC1B7FD0A9005F646C /* SANTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84251CEE1B7FD0A9005F646C /* SANTableViewController.m */; };
+		84273B8B1B8B667C007EF7E2 /* SANAddMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B861B8B667C007EF7E2 /* SANAddMovieViewController.m */; };
+		84273B8C1B8B667C007EF7E2 /* SANCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B881B8B667C007EF7E2 /* SANCollectionViewController.m */; };
+		84273B8D1B8B667C007EF7E2 /* SANContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B8A1B8B667C007EF7E2 /* SANContainerViewController.m */; };
+		84273B901B8B668F007EF7E2 /* SANDataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84273B8F1B8B668F007EF7E2 /* SANDataSource.plist */; };
+		84273B971B8B66D9007EF7E2 /* SANInputModelValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B921B8B66D9007EF7E2 /* SANInputModelValidator.m */; };
+		84273B981B8B66D9007EF7E2 /* SANMovieFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B941B8B66D9007EF7E2 /* SANMovieFactory.m */; };
+		84273B991B8B66D9007EF7E2 /* SANNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B961B8B66D9007EF7E2 /* SANNotifier.m */; };
+		84273B9C1B8B6700007EF7E2 /* SANCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B9B1B8B6700007EF7E2 /* SANCollectionViewCell.m */; };
 		843EF4DE1B76A5E300BB3D72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF4DD1B76A5E300BB3D72 /* main.m */; };
 		843EF4E11B76A5E300BB3D72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF4E01B76A5E300BB3D72 /* AppDelegate.m */; };
 		843EF4E71B76A5E300BB3D72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843EF4E51B76A5E300BB3D72 /* Main.storyboard */; };
@@ -60,6 +68,21 @@
 		84251CEB1B7FD0A9005F646C /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
 		84251CED1B7FD0A9005F646C /* SANTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANTableViewController.h; sourceTree = "<group>"; };
 		84251CEE1B7FD0A9005F646C /* SANTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANTableViewController.m; sourceTree = "<group>"; };
+		84273B851B8B667C007EF7E2 /* SANAddMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANAddMovieViewController.h; sourceTree = "<group>"; };
+		84273B861B8B667C007EF7E2 /* SANAddMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANAddMovieViewController.m; sourceTree = "<group>"; };
+		84273B871B8B667C007EF7E2 /* SANCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANCollectionViewController.h; sourceTree = "<group>"; };
+		84273B881B8B667C007EF7E2 /* SANCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANCollectionViewController.m; sourceTree = "<group>"; };
+		84273B891B8B667C007EF7E2 /* SANContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANContainerViewController.h; sourceTree = "<group>"; };
+		84273B8A1B8B667C007EF7E2 /* SANContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANContainerViewController.m; sourceTree = "<group>"; };
+		84273B8F1B8B668F007EF7E2 /* SANDataSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SANDataSource.plist; sourceTree = "<group>"; };
+		84273B911B8B66D9007EF7E2 /* SANInputModelValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANInputModelValidator.h; sourceTree = "<group>"; };
+		84273B921B8B66D9007EF7E2 /* SANInputModelValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANInputModelValidator.m; sourceTree = "<group>"; };
+		84273B931B8B66D9007EF7E2 /* SANMovieFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANMovieFactory.h; sourceTree = "<group>"; };
+		84273B941B8B66D9007EF7E2 /* SANMovieFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANMovieFactory.m; sourceTree = "<group>"; };
+		84273B951B8B66D9007EF7E2 /* SANNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANNotifier.h; sourceTree = "<group>"; };
+		84273B961B8B66D9007EF7E2 /* SANNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANNotifier.m; sourceTree = "<group>"; };
+		84273B9A1B8B6700007EF7E2 /* SANCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANCollectionViewCell.h; sourceTree = "<group>"; };
+		84273B9B1B8B6700007EF7E2 /* SANCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANCollectionViewCell.m; sourceTree = "<group>"; };
 		843EF4D81B76A5E300BB3D72 /* BestMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		843EF4DC1B76A5E300BB3D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843EF4DD1B76A5E300BB3D72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,6 +120,8 @@
 		84251CD61B7FD0A9005F646C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				84273B9A1B8B6700007EF7E2 /* SANCollectionViewCell.h */,
+				84273B9B1B8B6700007EF7E2 /* SANCollectionViewCell.m */,
 				84251CD71B7FD0A9005F646C /* SANMoviesCell.h */,
 				84251CD81B7FD0A9005F646C /* SANMoviesCell.m */,
 			);
@@ -124,6 +149,7 @@
 		84251CDF1B7FD0A9005F646C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84273B8E1B8B668F007EF7E2 /* Assets */,
 				84251CE01B7FD0A9005F646C /* Images */,
 			);
 			path = Resources;
@@ -157,10 +183,24 @@
 		84251CEC1B7FD0A9005F646C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				84273B851B8B667C007EF7E2 /* SANAddMovieViewController.h */,
+				84273B861B8B667C007EF7E2 /* SANAddMovieViewController.m */,
+				84273B871B8B667C007EF7E2 /* SANCollectionViewController.h */,
+				84273B881B8B667C007EF7E2 /* SANCollectionViewController.m */,
+				84273B891B8B667C007EF7E2 /* SANContainerViewController.h */,
+				84273B8A1B8B667C007EF7E2 /* SANContainerViewController.m */,
 				84251CED1B7FD0A9005F646C /* SANTableViewController.h */,
 				84251CEE1B7FD0A9005F646C /* SANTableViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		84273B8E1B8B668F007EF7E2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				84273B8F1B8B668F007EF7E2 /* SANDataSource.plist */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		843EF4CF1B76A5E300BB3D72 = {
@@ -188,6 +228,12 @@
 			children = (
 				843EF4DF1B76A5E300BB3D72 /* AppDelegate.h */,
 				843EF4E01B76A5E300BB3D72 /* AppDelegate.m */,
+				84273B911B8B66D9007EF7E2 /* SANInputModelValidator.h */,
+				84273B921B8B66D9007EF7E2 /* SANInputModelValidator.m */,
+				84273B931B8B66D9007EF7E2 /* SANMovieFactory.h */,
+				84273B941B8B66D9007EF7E2 /* SANMovieFactory.m */,
+				84273B951B8B66D9007EF7E2 /* SANNotifier.h */,
+				84273B961B8B66D9007EF7E2 /* SANNotifier.m */,
 				84251CD61B7FD0A9005F646C /* Cells */,
 				84251CD91B7FD0A9005F646C /* Data */,
 				84251CDC1B7FD0A9005F646C /* Models */,
@@ -321,6 +367,7 @@
 				84251CF91B7FD0A9005F646C /* 7.jpg in Resources */,
 				84584B8F1B77FCDB004E36FB /* .gitignore in Resources */,
 				84251CFA1B7FD0A9005F646C /* 8.jpg in Resources */,
+				84273B901B8B668F007EF7E2 /* SANDataSource.plist in Resources */,
 				84251CF41B7FD0A9005F646C /* 2.jpg in Resources */,
 				843EF4EC1B76A5E300BB3D72 /* LaunchScreen.xib in Resources */,
 				843EF4E91B76A5E300BB3D72 /* Images.xcassets in Resources */,
@@ -347,11 +394,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				843EF4E11B76A5E300BB3D72 /* AppDelegate.m in Sources */,
+				84273B981B8B66D9007EF7E2 /* SANMovieFactory.m in Sources */,
 				843EF4DE1B76A5E300BB3D72 /* main.m in Sources */,
 				84251CEF1B7FD0A9005F646C /* SANMoviesCell.m in Sources */,
+				84273B8D1B8B667C007EF7E2 /* SANContainerViewController.m in Sources */,
 				84251CF11B7FD0A9005F646C /* SANMovie.m in Sources */,
 				84251CFC1B7FD0A9005F646C /* SANTableViewController.m in Sources */,
+				84273B8C1B8B667C007EF7E2 /* SANCollectionViewController.m in Sources */,
 				84251CF01B7FD0A9005F646C /* SANDataSource.m in Sources */,
+				84273B971B8B66D9007EF7E2 /* SANInputModelValidator.m in Sources */,
+				84273B991B8B66D9007EF7E2 /* SANNotifier.m in Sources */,
+				84273B8B1B8B667C007EF7E2 /* SANAddMovieViewController.m in Sources */,
+				84273B9C1B8B6700007EF7E2 /* SANCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
