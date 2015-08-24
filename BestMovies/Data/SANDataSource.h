@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+<<<<<<< HEAD
 
 @class SANMovie;
 
 @protocol SANModelsDataSourceDelegate;
+=======
+>>>>>>> 27c32398648f480c9f544dd03ca5aaa6c3511daa
 
 @interface SANDataSource : NSObject
 
