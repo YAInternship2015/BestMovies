@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#warning 'nj yt Notifier, а просто файл с константами. SANConstants, или SANNotificationsConstants
 OBJC_EXTERN NSString * const SANDataFileContentDidChangeNotification;
 
 OBJC_EXTERN NSString * const SANMovieTitleUserInfoKey;

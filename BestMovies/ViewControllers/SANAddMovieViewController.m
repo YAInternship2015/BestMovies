@@ -37,7 +37,15 @@
     
     BOOL validationResult = [self.validator isValidModelTitle:self.addNameField.text error:&error];
     if (!validationResult)
+#warning открывающаяся скобка должна быть на той же строке, что и if
     {
+#warning не совсем правильное форматирование
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[error localizedDescription]
+//                                                            message:[error localizedFailureReason]
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"")
+//                                                  otherButtonTitles:nil];
+        
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:[error localizedDescription]
                                   message:[error localizedFailureReason]

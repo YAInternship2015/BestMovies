@@ -20,7 +20,7 @@
 
 @end
 
-
+#warning зачем столько пустых строк?
 
 
 
@@ -28,7 +28,7 @@
 
 @protocol SANModelsDataSourceDelegate <NSObject>
 @required
-
+#warning зачем здесь параметр array? те, кто использует датасорс, и так могут у него получить все необходимые данные
 - (void)dataWasChanged:(SANDataSource *)data array:(NSArray *)array;
 
 @end

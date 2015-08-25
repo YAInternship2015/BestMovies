@@ -12,6 +12,7 @@
 
 @interface SANContainerViewController ()
 
+#warning не совсем понятно, что храниться в данной переменной. Надо дать более понятное название
 @property (nonatomic, assign) BOOL switcher;
 @property (nonatomic, strong) SANTableViewController *tableVC;
 @property (nonatomic, strong) SANCollectionViewController *collectionVC;
@@ -35,6 +36,7 @@
 #pragma mark - Actions
 
 - (IBAction)switchAction:(UIBarButtonItem *)sender {
+#warning достаточно просто if (self.switcher)
     if (self.switcher == YES) {
         self.collectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SANCollectionViewController"];
         [self swapFromViewController:self.tableVC toViewController:self.collectionVC];

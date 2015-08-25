@@ -12,7 +12,9 @@
 
 @interface SANCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, SANModelsDataSourceDelegate>
 
+#warning лучше все же datasoure, а не data
 @property (nonatomic, strong) SANDataSource *data;
+#warning не нужно хранить массив, который и так есть в датасорсе
 @property (nonatomic, strong) NSArray *array;
 
 @end
@@ -23,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+#warning после alloc] нужен пробел
     self.data = [[SANDataSource alloc]initWithDelegate:self];
     self.array = [self.data allMovies];
 }
@@ -34,13 +37,14 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+#warning тут нужно обращаться к датасорсу
     return [self.array count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * const reuseIdentifier = @"SANCollectionViewCell";
     SANCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-
+#warning тут нужно обращаться к датасорсу
     SANMovie *movie = [self.array objectAtIndex:indexPath.item];
     [cell setupWithMovie:movie];
 

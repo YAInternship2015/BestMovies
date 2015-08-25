@@ -12,6 +12,7 @@
 
 @interface SANTableViewController () <UITableViewDataSource, UITableViewDelegate, SANModelsDataSourceDelegate>
 
+#warning здесь те же ошибки, что и в SANCollectionViewController
 @property (nonatomic, strong) SANDataSource *data;
 @property (nonatomic, strong) NSArray *array;
 
