@@ -12,10 +12,7 @@
 
 @interface SANCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, SANModelsDataSourceDelegate>
 
-#warning лучше все же datasoure, а не data
-@property (nonatomic, strong) SANDataSource *data;
-#warning не нужно хранить массив, который и так есть в датасорсе
-@property (nonatomic, strong) NSArray *array;
+@property (nonatomic, strong) SANDataSource *dataSource;
 
 @end
 
@@ -25,9 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-#warning после alloc] нужен пробел
-    self.data = [[SANDataSource alloc]initWithDelegate:self];
-    self.array = [self.data allMovies];
+    self.dataSource = [[SANDataSource alloc] initWithDelegate:self];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -37,24 +32,20 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning тут нужно обращаться к датасорсу
-    return [self.array count];
+    return [self.dataSource moviesCount];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * const reuseIdentifier = @"SANCollectionViewCell";
     SANCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-#warning тут нужно обращаться к датасорсу
-    SANMovie *movie = [self.array objectAtIndex:indexPath.item];
+    SANMovie *movie = [self.dataSource movieAtIndex:indexPath.item];
     [cell setupWithMovie:movie];
-
     return cell;
 }
 
 #pragma mark - SANModelsDataSourceDelegate
 
-- (void)dataWasChanged:(SANDataSource *)data array:(NSArray *)array{
-    self.array = array;
+- (void)dataWasChanged:(SANDataSource *)data {
     [self.collectionView reloadData];
 }
 

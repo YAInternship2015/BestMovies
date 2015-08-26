@@ -11,7 +11,7 @@
 
 @implementation SANMovieFactory
 
-+ (SANMovie *)createMovieWithText:(NSString *)text image:(UIImage *)image {
++ (SANMovie *)movieWithText:(NSString *)text image:(UIImage *)image {
     SANMovie *movie = [[SANMovie alloc]initWithImage:image name:text];
     return movie;
 }

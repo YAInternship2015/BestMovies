@@ -8,7 +8,7 @@
 
 #import "SANDataSource.h"
 #import "SANMovie.h"
-#import "SANNotifier.h"
+#import "SANConstants.h"
 
 @interface SANDataSource() 
 
@@ -23,44 +23,24 @@
 
 #pragma mark - Lifecycle
 
-#warning два инита отличаются только строкой self.delegate = delegate;. Внутри метода initWithDelegate: вместо [super init] надо вызвать [self init], и после этого self.delegate = delegate;. И всё
-
 - (instancetype)init {
     self = [super init];
     if (self) {
-#warning не понял, зачем сначала инициализировать пустой массив, а затем дальше заполнять его
-        self.arrayMovies = [NSMutableArray array];
-        
-        [self defaultSettings];
-        
-        self.arrayMovies = [self readModel];
+        [self writeMovieFromPlistBundleToDocuments];
+        self.arrayMovies = [self readModels];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(movieTitleDidChanged:)
                                                      name:SANDataFileContentDidChangeNotification
                                                    object:nil];
-        
     }
     return self;
 }
 
 - (instancetype)initWithDelegate:(id<SANModelsDataSourceDelegate>)delegate {
-    self = [super init];
+    self = [self init];
     if (self) {
-        
         self.delegate = delegate;
-        
-        self.arrayMovies = [NSMutableArray array];
-        
-        [self defaultSettings];
-       
-        self.arrayMovies = [self readModel];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                    selector:@selector(movieTitleDidChanged:)
-                                        name:SANDataFileContentDidChangeNotification
-                                      object:nil];
-        
     }
     return self;
 }
@@ -71,8 +51,15 @@
 
 #pragma mark - Methods
 
-#warning этот метод надо переименовать, чтобы имя описывало происходящее внутри
-- (void)defaultSettings {
+- (NSInteger)moviesCount {
+    return [self.arrayMovies count];
+}
+
+- (SANMovie *)movieAtIndex:(NSInteger)index {
+    return [self.arrayMovies objectAtIndex:index];
+}
+
+- (void)writeMovieFromPlistBundleToDocuments {
     NSError *error;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -86,13 +73,7 @@
     }
 }
 
-#warning не нужен такой метод, наружу надо показать numberOfMovies и movieAtIndex:
-- (NSArray *)allMovies {
-    return self.arrayMovies;
-}
-
-#warning readModels
-- (NSArray *)readModel {
+- (NSArray *)readModels {
     NSMutableDictionary *savedStock = [[NSMutableDictionary alloc]initWithContentsOfFile:self.path];
     NSArray *imgArray = [savedStock valueForKey:@"images"];
     NSArray *nameArray = [savedStock valueForKey:@"names"];
@@ -100,8 +81,7 @@
     for (NSInteger i = 0; i < [nameArray count]; i++) {
         UIImage *image = [UIImage imageNamed:[imgArray objectAtIndex:i]];
         NSString *name = [nameArray objectAtIndex:i];
-#warning после alloc] - пробел
-        SANMovie *movie = [[SANMovie alloc]initWithImage:image name:name];
+        SANMovie *movie = [[SANMovie alloc] initWithImage:image name:name];
         [array addObject:movie];
     }
     return array;
@@ -122,23 +102,21 @@
     [dict writeToFile:self.path atomically: YES];
     
     self.tempStringForNotification = model.name;
-    
 }
 
 -(void)setTempStringForNotification:(NSString *)tempStringForNotification {
     _tempStringForNotification = tempStringForNotification;
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    NSDictionary *dict = [NSDictionary dictionaryWithObject:@"modelDidChanged" forKey:SANMovieTitleUserInfoKey];
-#warning userInfo нигде в подписчиках не анализируется, потому можно его не передавать
     [nc postNotificationName:SANDataFileContentDidChangeNotification
                       object:nil
-                    userInfo:dict];
+                    userInfo:nil];
 }
 
 #pragma mark - Notification
 
 - (void)movieTitleDidChanged:(NSNotification *)notification {
-    [self.delegate dataWasChanged:self array:[self readModel]];
+    self.arrayMovies = [self readModels];
+    [self.delegate dataWasChanged:self];
 }
 
 @end

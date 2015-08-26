@@ -12,9 +12,7 @@
 
 @interface SANTableViewController () <UITableViewDataSource, UITableViewDelegate, SANModelsDataSourceDelegate>
 
-#warning здесь те же ошибки, что и в SANCollectionViewController
-@property (nonatomic, strong) SANDataSource *data;
-@property (nonatomic, strong) NSArray *array;
+@property (nonatomic, strong) SANDataSource *dataSource;
 
 @end
 
@@ -24,27 +22,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.data = [[SANDataSource alloc]initWithDelegate:self];
-    self.array = [self.data allMovies];
+    self.dataSource = [[SANDataSource alloc]initWithDelegate:self];
 }
 
 #pragma mark -  UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.array count];
+    return [self.dataSource moviesCount];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"SANTableViewCell";
     SANMoviesCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    [cell setupWithMovie:[self.array objectAtIndex:indexPath.row]];
+    [cell setupWithMovie:[self.dataSource movieAtIndex:indexPath.row]];
     return cell;
 }
 
 #pragma mark - SANModelsDataSourceDelegate
 
--(void)dataWasChanged:(SANDataSource *)data array:(NSArray *)array{
-    self.array = array;
+-(void)dataWasChanged:(SANDataSource *)data {
     [self.tableView reloadData];
 }
 

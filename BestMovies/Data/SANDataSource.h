@@ -14,21 +14,16 @@
 
 @interface SANDataSource : NSObject
 
-- (NSArray *)allMovies;
+- (SANMovie *)movieAtIndex:(NSInteger)index;
+- (NSInteger)moviesCount;
 - (void)saveModel:(SANMovie *)model;
 - (instancetype)initWithDelegate:(id<SANModelsDataSourceDelegate>)delegate;
 
 @end
 
-#warning зачем столько пустых строк?
-
-
-
-
-
 @protocol SANModelsDataSourceDelegate <NSObject>
 @required
-#warning зачем здесь параметр array? те, кто использует датасорс, и так могут у него получить все необходимые данные
-- (void)dataWasChanged:(SANDataSource *)data array:(NSArray *)array;
+
+- (void)dataWasChanged:(SANDataSource *)data;
 
 @end

@@ -27,8 +27,8 @@
 		84273B901B8B668F007EF7E2 /* SANDataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84273B8F1B8B668F007EF7E2 /* SANDataSource.plist */; };
 		84273B971B8B66D9007EF7E2 /* SANInputModelValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B921B8B66D9007EF7E2 /* SANInputModelValidator.m */; };
 		84273B981B8B66D9007EF7E2 /* SANMovieFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B941B8B66D9007EF7E2 /* SANMovieFactory.m */; };
-		84273B991B8B66D9007EF7E2 /* SANNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B961B8B66D9007EF7E2 /* SANNotifier.m */; };
 		84273B9C1B8B6700007EF7E2 /* SANCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B9B1B8B6700007EF7E2 /* SANCollectionViewCell.m */; };
+		842AD8061B8E70F100ECDBDF /* SANConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842AD8051B8E70F100ECDBDF /* SANConstants.m */; };
 		843EF4DE1B76A5E300BB3D72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF4DD1B76A5E300BB3D72 /* main.m */; };
 		843EF4E11B76A5E300BB3D72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF4E01B76A5E300BB3D72 /* AppDelegate.m */; };
 		843EF4E71B76A5E300BB3D72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843EF4E51B76A5E300BB3D72 /* Main.storyboard */; };
@@ -79,10 +79,10 @@
 		84273B921B8B66D9007EF7E2 /* SANInputModelValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANInputModelValidator.m; sourceTree = "<group>"; };
 		84273B931B8B66D9007EF7E2 /* SANMovieFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANMovieFactory.h; sourceTree = "<group>"; };
 		84273B941B8B66D9007EF7E2 /* SANMovieFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANMovieFactory.m; sourceTree = "<group>"; };
-		84273B951B8B66D9007EF7E2 /* SANNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANNotifier.h; sourceTree = "<group>"; };
-		84273B961B8B66D9007EF7E2 /* SANNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANNotifier.m; sourceTree = "<group>"; };
 		84273B9A1B8B6700007EF7E2 /* SANCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANCollectionViewCell.h; sourceTree = "<group>"; };
 		84273B9B1B8B6700007EF7E2 /* SANCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANCollectionViewCell.m; sourceTree = "<group>"; };
+		842AD8041B8E70F100ECDBDF /* SANConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANConstants.h; sourceTree = "<group>"; };
+		842AD8051B8E70F100ECDBDF /* SANConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANConstants.m; sourceTree = "<group>"; };
 		843EF4D81B76A5E300BB3D72 /* BestMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		843EF4DC1B76A5E300BB3D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843EF4DD1B76A5E300BB3D72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -203,6 +203,15 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		842AD8031B8E70F100ECDBDF /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				842AD8041B8E70F100ECDBDF /* SANConstants.h */,
+				842AD8051B8E70F100ECDBDF /* SANConstants.m */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
 		843EF4CF1B76A5E300BB3D72 = {
 			isa = PBXGroup;
 			children = (
@@ -226,14 +235,13 @@
 		843EF4DA1B76A5E300BB3D72 /* BestMovies */ = {
 			isa = PBXGroup;
 			children = (
+				842AD8031B8E70F100ECDBDF /* Global */,
 				843EF4DF1B76A5E300BB3D72 /* AppDelegate.h */,
 				843EF4E01B76A5E300BB3D72 /* AppDelegate.m */,
 				84273B911B8B66D9007EF7E2 /* SANInputModelValidator.h */,
 				84273B921B8B66D9007EF7E2 /* SANInputModelValidator.m */,
 				84273B931B8B66D9007EF7E2 /* SANMovieFactory.h */,
 				84273B941B8B66D9007EF7E2 /* SANMovieFactory.m */,
-				84273B951B8B66D9007EF7E2 /* SANNotifier.h */,
-				84273B961B8B66D9007EF7E2 /* SANNotifier.m */,
 				84251CD61B7FD0A9005F646C /* Cells */,
 				84251CD91B7FD0A9005F646C /* Data */,
 				84251CDC1B7FD0A9005F646C /* Models */,
@@ -403,7 +411,7 @@
 				84273B8C1B8B667C007EF7E2 /* SANCollectionViewController.m in Sources */,
 				84251CF01B7FD0A9005F646C /* SANDataSource.m in Sources */,
 				84273B971B8B66D9007EF7E2 /* SANInputModelValidator.m in Sources */,
-				84273B991B8B66D9007EF7E2 /* SANNotifier.m in Sources */,
+				842AD8061B8E70F100ECDBDF /* SANConstants.m in Sources */,
 				84273B8B1B8B667C007EF7E2 /* SANAddMovieViewController.m in Sources */,
 				84273B9C1B8B6700007EF7E2 /* SANCollectionViewCell.m in Sources */,
 			);

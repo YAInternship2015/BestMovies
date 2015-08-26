@@ -13,7 +13,6 @@
 
 @interface SANMovieFactory : NSObject
 
-#warning слово "create" здесь лишнее. movieWithText:image:
-+ (SANMovie *)createMovieWithText:(NSString *)text image:(UIImage *)image;
++ (SANMovie *)movieWithText:(NSString *)text image:(UIImage *)image;
 
 @end

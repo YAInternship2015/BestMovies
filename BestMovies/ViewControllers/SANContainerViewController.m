@@ -12,8 +12,7 @@
 
 @interface SANContainerViewController ()
 
-#warning не совсем понятно, что храниться в данной переменной. Надо дать более понятное название
-@property (nonatomic, assign) BOOL switcher;
+@property (nonatomic, assign) BOOL switchFlagViewController;
 @property (nonatomic, strong) SANTableViewController *tableVC;
 @property (nonatomic, strong) SANCollectionViewController *collectionVC;
 
@@ -25,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.switcher = YES;
+    self.switchFlagViewController = YES;
     
     self.tableVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SANTableViewController"];
     [self addChildViewController:self.tableVC];
@@ -36,15 +35,14 @@
 #pragma mark - Actions
 
 - (IBAction)switchAction:(UIBarButtonItem *)sender {
-#warning достаточно просто if (self.switcher)
-    if (self.switcher == YES) {
+    if (self.switchFlagViewController) {
         self.collectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SANCollectionViewController"];
         [self swapFromViewController:self.tableVC toViewController:self.collectionVC];
-        self.switcher = NO;
+        self.switchFlagViewController = NO;
     }else{
         self.tableVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SANTableViewController"];
         [self swapFromViewController:self.collectionVC toViewController:self.tableVC];
-        self.switcher = YES;
+        self.switchFlagViewController = YES;
     }
 }
 
