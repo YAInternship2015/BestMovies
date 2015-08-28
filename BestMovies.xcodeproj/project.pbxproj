@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841A09051B9102000096174D /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A09041B9102000096174D /* NSError+Error.m */; };
 		84251CEF1B7FD0A9005F646C /* SANMoviesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84251CD81B7FD0A9005F646C /* SANMoviesCell.m */; };
 		84251CF01B7FD0A9005F646C /* SANDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 84251CDB1B7FD0A9005F646C /* SANDataSource.m */; };
 		84251CF11B7FD0A9005F646C /* SANMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 84251CDE1B7FD0A9005F646C /* SANMovie.m */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841A09031B9102000096174D /* NSError+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Error.h"; sourceTree = "<group>"; };
+		841A09041B9102000096174D /* NSError+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Error.m"; sourceTree = "<group>"; };
 		84251CD71B7FD0A9005F646C /* SANMoviesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANMoviesCell.h; sourceTree = "<group>"; };
 		84251CD81B7FD0A9005F646C /* SANMoviesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANMoviesCell.m; sourceTree = "<group>"; };
 		84251CDA1B7FD0A9005F646C /* SANDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANDataSource.h; sourceTree = "<group>"; };
@@ -117,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841A09021B90FE720096174D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				841A09031B9102000096174D /* NSError+Error.h */,
+				841A09041B9102000096174D /* NSError+Error.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		84251CD61B7FD0A9005F646C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +247,7 @@
 		843EF4DA1B76A5E300BB3D72 /* BestMovies */ = {
 			isa = PBXGroup;
 			children = (
+				841A09021B90FE720096174D /* Categories */,
 				842AD8031B8E70F100ECDBDF /* Global */,
 				843EF4DF1B76A5E300BB3D72 /* AppDelegate.h */,
 				843EF4E01B76A5E300BB3D72 /* AppDelegate.m */,
@@ -409,6 +422,7 @@
 				84251CF11B7FD0A9005F646C /* SANMovie.m in Sources */,
 				84251CFC1B7FD0A9005F646C /* SANTableViewController.m in Sources */,
 				84273B8C1B8B667C007EF7E2 /* SANCollectionViewController.m in Sources */,
+				841A09051B9102000096174D /* NSError+Error.m in Sources */,
 				84251CF01B7FD0A9005F646C /* SANDataSource.m in Sources */,
 				84273B971B8B66D9007EF7E2 /* SANInputModelValidator.m in Sources */,
 				842AD8061B8E70F100ECDBDF /* SANConstants.m in Sources */,
