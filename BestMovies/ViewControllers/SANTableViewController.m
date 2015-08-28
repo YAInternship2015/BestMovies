@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+#warning потеряли пробел после alloc]
     self.dataSource = [[SANDataSource alloc]initWithDelegate:self];
 }
 

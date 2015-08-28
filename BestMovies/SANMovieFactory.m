@@ -12,6 +12,7 @@
 @implementation SANMovieFactory
 
 + (SANMovie *)movieWithText:(NSString *)text image:(UIImage *)image {
+#warning снова потеряли пробел после alloc]
     SANMovie *movie = [[SANMovie alloc]initWithImage:image name:text];
     return movie;
 }

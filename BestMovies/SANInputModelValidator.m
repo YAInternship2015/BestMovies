@@ -19,6 +19,12 @@
             NSArray *objArray = [NSArray arrayWithObjects:description, reason, nil];
             NSArray *keyArray = [NSArray arrayWithObjects:NSLocalizedDescriptionKey,
                                  NSLocalizedFailureReasonErrorKey, nil];
+#warning намного более читабельным было бы объявление 
+//            @{
+//              NSLocalizedDescriptionKey : description,
+//              NSLocalizedFailureReasonErrorKey : reason
+//               }
+#warning еще можно было заморочиться и создавать NSError в категории на NSError, где объявить метод +errorWithDescription:reason:
             NSDictionary *userInfo = [NSDictionary dictionaryWithObjects:objArray
                                                                  forKeys:keyArray];
             *error = [NSError errorWithDomain:@"com.ignatenko.bestmovies"

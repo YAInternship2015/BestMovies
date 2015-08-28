@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) NSArray *arrayMovies;
 @property (nonatomic, strong) NSString *path;
+#warning tempStringForNotification нигде не сипользуется, можно удалить
 @property (nonatomic, strong) NSString *tempStringForNotification;
 @property (nonatomic, weak) id<SANModelsDataSourceDelegate> delegate;
 
@@ -98,7 +99,9 @@
     
     [imgArray addObject:[NSString stringWithFormat:@"%ld.jpg", (long)randomNumber]];
     
+#warning здесь также лучше подошел бы современный синтаксис NSDictionary @{key : value}
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: imgArray, @"images", titleArray, @"names", nil];
+#warning перед YES пробел не нужен
     [dict writeToFile:self.path atomically: YES];
     
     self.tempStringForNotification = model.name;
