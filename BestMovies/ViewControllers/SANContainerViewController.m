@@ -10,6 +10,9 @@
 #import "SANTableViewController.h"
 #import "SANCollectionViewController.h"
 
+static NSString * const SANTableControllerStoryboardID = @"SANTableViewController";
+static NSString * const SANCollectionControllerStoryboardID = @"SANCollectionViewController";
+
 @interface SANContainerViewController ()
 
 @property (nonatomic, assign) BOOL switchFlagViewController;
@@ -26,7 +29,7 @@
     [super viewDidLoad];
     self.switchFlagViewController = YES;
     
-    self.tableVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SANTableViewController"];
+    self.tableVC = [self.storyboard instantiateViewControllerWithIdentifier:SANTableControllerStoryboardID];
     [self addChildViewController:self.tableVC];
     [self.view addSubview:self.tableVC.view];
     [self.tableVC didMoveToParentViewController:self];
@@ -36,11 +39,11 @@
 
 - (IBAction)switchAction:(UIBarButtonItem *)sender {
     if (self.switchFlagViewController) {
-        self.collectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SANCollectionViewController"];
+        self.collectionVC = [self.storyboard instantiateViewControllerWithIdentifier:SANCollectionControllerStoryboardID];
         [self swapFromViewController:self.tableVC toViewController:self.collectionVC];
         self.switchFlagViewController = NO;
     }else{
-        self.tableVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SANTableViewController"];
+        self.tableVC = [self.storyboard instantiateViewControllerWithIdentifier:SANTableControllerStoryboardID];
         [self swapFromViewController:self.collectionVC toViewController:self.tableVC];
         self.switchFlagViewController = YES;
     }
