@@ -97,7 +97,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imgView" destination="tuD-yO-9HE" id="VSL-NK-T1R"/>
+                                    <outlet property="imageView" destination="tuD-yO-9HE" id="zcV-Rv-h1E"/>
                                     <outlet property="nameLabel" destination="fQa-eq-261" id="wtn-zh-eNh"/>
                                 </connections>
                             </tableViewCell>
@@ -184,7 +184,7 @@
                                 </view>
                                 <size key="customSize" width="100" height="100"/>
                                 <connections>
-                                    <outlet property="imgView" destination="IOl-Mj-aJo" id="2gc-00-0jv"/>
+                                    <outlet property="imageView" destination="IOl-Mj-aJo" id="snJ-xZ-ca2"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

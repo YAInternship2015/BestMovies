@@ -13,7 +13,7 @@
 
 @interface SANAddMovieViewController () <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *addNameField;
+@property (nonatomic, weak) IBOutlet UITextField *addNameField;
 @property (nonatomic, strong) SANInputModelValidator *validator;
 
 @end

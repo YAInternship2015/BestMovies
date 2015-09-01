@@ -11,15 +11,15 @@
 
 @interface SANMoviesCell()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 
 @end
 
 @implementation SANMoviesCell
 
 - (void)setupWithMovie:(SANMovie *)movie {
-    self.imgView.image = movie.avatarImage;
+    self.imageView.image = movie.avatarImage;
     self.nameLabel.text = movie.name;
 }
 

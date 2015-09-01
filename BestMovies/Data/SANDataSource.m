@@ -8,12 +8,12 @@
 
 #import "SANDataSource.h"
 #import "SANMovie.h"
-#import "SANConstants.h"
+
+static NSString *const SANDataFileContentDidChangeNotification = @"SANDataFileContentDidChangeNotification";
 
 @interface SANDataSource() 
 
-#warning лучше moviesArray
-@property (nonatomic, strong) NSArray *arrayMovies;
+@property (nonatomic, strong) NSArray *moviesArray;
 @property (nonatomic, strong) NSString *path;
 @property (nonatomic, weak) id<SANModelsDataSourceDelegate> delegate;
 
@@ -27,8 +27,8 @@
     self = [super init];
     if (self) {
         [self writeMovieFromPlistBundleToDocuments];
-        self.arrayMovies = [self readModels];
-        
+        self.moviesArray = [self movieModelsFromFile];
+  
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(movieTitleDidChanged:)
                                                      name:SANDataFileContentDidChangeNotification
@@ -52,11 +52,11 @@
 #pragma mark - Methods
 
 - (NSInteger)moviesCount {
-    return [self.arrayMovies count];
+    return [self.moviesArray count];
 }
 
 - (SANMovie *)movieAtIndex:(NSInteger)index {
-    return [self.arrayMovies objectAtIndex:index];
+    return [self.moviesArray objectAtIndex:index];
 }
 
 - (void)writeMovieFromPlistBundleToDocuments {
@@ -66,15 +66,14 @@
     self.path = [documentsDirectory stringByAppendingPathComponent:@"data.plist"];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
-#warning после : переж именем параметра не нужен пробел
-    if (![fileManager fileExistsAtPath: self.path]) {
+
+    if (![fileManager fileExistsAtPath:self.path]) {
         NSString *bundle = [[NSBundle mainBundle] pathForResource:@"SANDataSource" ofType:@"plist"];
         [fileManager copyItemAtPath:bundle toPath: self.path error:&error];
     }
 }
 
-#warning в имени метода нет ничего про возвращаемые данные. Надо либо назвать метод movieModelsFromFile, либо назвать метод loadMovieModels и ничего не возвращать из метода и сделать присваивание прямо в методе
-- (NSArray *)readModels {
+- (NSArray *)movieModelsFromFile {
     NSMutableDictionary *savedStock = [[NSMutableDictionary alloc]initWithContentsOfFile:self.path];
     NSArray *imgArray = [savedStock valueForKey:@"images"];
     NSArray *nameArray = [savedStock valueForKey:@"names"];
@@ -106,13 +105,12 @@
     [dict writeToFile:self.path atomically:YES];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:SANDataFileContentDidChangeNotification object:nil];
-    
 }
 
 #pragma mark - Notification
 
 - (void)movieTitleDidChanged:(NSNotification *)notification {
-    self.arrayMovies = [self readModels];
+    self.moviesArray = [self movieModelsFromFile];
     [self.delegate dataWasChanged:self];
 }
 
