@@ -12,6 +12,7 @@
 
 @interface SANDataSource() 
 
+#warning лучше moviesArray
 @property (nonatomic, strong) NSArray *arrayMovies;
 @property (nonatomic, strong) NSString *path;
 @property (nonatomic, weak) id<SANModelsDataSourceDelegate> delegate;
@@ -65,13 +66,14 @@
     self.path = [documentsDirectory stringByAppendingPathComponent:@"data.plist"];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    
+#warning после : переж именем параметра не нужен пробел
     if (![fileManager fileExistsAtPath: self.path]) {
         NSString *bundle = [[NSBundle mainBundle] pathForResource:@"SANDataSource" ofType:@"plist"];
         [fileManager copyItemAtPath:bundle toPath: self.path error:&error];
     }
 }
 
+#warning в имени метода нет ничего про возвращаемые данные. Надо либо назвать метод movieModelsFromFile, либо назвать метод loadMovieModels и ничего не возвращать из метода и сделать присваивание прямо в методе
 - (NSArray *)readModels {
     NSMutableDictionary *savedStock = [[NSMutableDictionary alloc]initWithContentsOfFile:self.path];
     NSArray *imgArray = [savedStock valueForKey:@"images"];

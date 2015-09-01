@@ -8,4 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
+#warning можно обойтись только *.h файлом, используя синтаксис:
+//static NSString *const SANDataFileContentDidChangeNotification = @"SANDataFileContentDidChangeNotification";
 OBJC_EXTERN NSString * const SANDataFileContentDidChangeNotification;

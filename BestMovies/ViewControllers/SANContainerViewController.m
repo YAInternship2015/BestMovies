@@ -53,6 +53,7 @@ static NSString * const SANCollectionControllerStoryboardID = @"SANCollectionVie
 
 - (void)swapFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController {
     self.navigationController.navigationBar.translucent = NO;
+#warning вместо CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) можно написать self.view.bounds
     toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
     [fromViewController willMoveToParentViewController:nil];
