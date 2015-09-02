@@ -8,8 +8,7 @@
 
 #import "SANDataSource.h"
 #import "SANMovie.h"
-
-static NSString *const SANDataFileContentDidChangeNotification = @"SANDataFileContentDidChangeNotification";
+#import "SANNotificationsConstants.h"
 
 @interface SANDataSource() 
 

@@ -27,7 +27,6 @@
     
     self.validator = [SANInputModelValidator new];
     [self.addNameField becomeFirstResponder];
-    self.addNameField.delegate = self;
 }
 
 #pragma mark - Methods

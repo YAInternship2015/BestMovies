@@ -70,6 +70,7 @@
 		84251CEB1B7FD0A9005F646C /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
 		84251CED1B7FD0A9005F646C /* SANTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANTableViewController.h; sourceTree = "<group>"; };
 		84251CEE1B7FD0A9005F646C /* SANTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANTableViewController.m; sourceTree = "<group>"; };
+		8426173E1B9782DB00302FB9 /* SANNotificationsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANNotificationsConstants.h; sourceTree = "<group>"; };
 		84273B851B8B667C007EF7E2 /* SANAddMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANAddMovieViewController.h; sourceTree = "<group>"; };
 		84273B861B8B667C007EF7E2 /* SANAddMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANAddMovieViewController.m; sourceTree = "<group>"; };
 		84273B871B8B667C007EF7E2 /* SANCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANCollectionViewController.h; sourceTree = "<group>"; };
@@ -242,6 +243,7 @@
 				84273B921B8B66D9007EF7E2 /* SANInputModelValidator.m */,
 				84273B931B8B66D9007EF7E2 /* SANMovieFactory.h */,
 				84273B941B8B66D9007EF7E2 /* SANMovieFactory.m */,
+				8426173E1B9782DB00302FB9 /* SANNotificationsConstants.h */,
 				84251CD61B7FD0A9005F646C /* Cells */,
 				84251CD91B7FD0A9005F646C /* Data */,
 				84251CDC1B7FD0A9005F646C /* Models */,
