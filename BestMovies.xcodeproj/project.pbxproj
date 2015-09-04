@@ -37,6 +37,7 @@
 		843EF4F81B76A5E300BB3D72 /* BestMoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF4F71B76A5E300BB3D72 /* BestMoviesTests.m */; };
 		84584B8F1B77FCDB004E36FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 84584B8E1B77FCDB004E36FB /* .gitignore */; };
 		8465554B1B774EDD00DC31C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8465554A1B774EDD00DC31C4 /* UIKit.framework */; };
+		84DD779B1B9A31B00065E3BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84DD779A1B9A31B00065E3BC /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		843EF4F71B76A5E300BB3D72 /* BestMoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BestMoviesTests.m; sourceTree = "<group>"; };
 		84584B8E1B77FCDB004E36FB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8465554A1B774EDD00DC31C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		84DD779A1B9A31B00065E3BC /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 			children = (
 				843EF4DC1B76A5E300BB3D72 /* Info.plist */,
 				843EF4DD1B76A5E300BB3D72 /* main.m */,
+				84DD779A1B9A31B00065E3BC /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				84251CFB1B7FD0A9005F646C /* 9.jpg in Resources */,
 				84251CF31B7FD0A9005F646C /* 10.jpg in Resources */,
 				84251CF61B7FD0A9005F646C /* 4.jpg in Resources */,
+				84DD779B1B9A31B00065E3BC /* Localizable.strings in Resources */,
 				84251CF21B7FD0A9005F646C /* 1.jpg in Resources */,
 				84251CF51B7FD0A9005F646C /* 3.jpg in Resources */,
 			);
