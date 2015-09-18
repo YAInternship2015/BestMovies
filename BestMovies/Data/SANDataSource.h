@@ -7,23 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @class SANMovie;
 
-@protocol SANModelsDataSourceDelegate;
-
 @interface SANDataSource : NSObject
 
-- (SANMovie *)movieAtIndex:(NSInteger)index;
 - (NSInteger)moviesCount;
-- (void)saveModel:(SANMovie *)model;
-- (instancetype)initWithDelegate:(id<SANModelsDataSourceDelegate>)delegate;
+- (instancetype)initWithDelegate:(id<NSFetchedResultsControllerDelegate>)delegate;
+- (void)addModelWithImagePath:(NSString *)imagePath name:(NSString *)name;
+- (void)deleteModelWithIndex:(NSIndexPath *)index;
+- (SANMovie *)modelWithIndexPath:(NSIndexPath *)indexPath;
+- (void)saveContext;
 
 @end
 
-@protocol SANModelsDataSourceDelegate <NSObject>
-@required
-
-- (void)dataWasChanged:(SANDataSource *)data;
-
-@end

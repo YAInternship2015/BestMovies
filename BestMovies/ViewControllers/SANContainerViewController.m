@@ -10,6 +10,8 @@
 #import "SANTableViewController.h"
 #import "SANCollectionViewController.h"
 
+#define ANIMATION_DURATION_IN_SECONDS 0.25
+
 static NSString * const SANTableControllerStoryboardID = @"SANTableViewController";
 static NSString * const SANCollectionControllerStoryboardID = @"SANCollectionViewController";
 
@@ -59,7 +61,8 @@ static NSString * const SANCollectionControllerStoryboardID = @"SANCollectionVie
     [fromViewController willMoveToParentViewController:nil];
     [self addChildViewController:toViewController];
     
-    [self transitionFromViewController:fromViewController toViewController:toViewController duration:0.25 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
+    [self transitionFromViewController:fromViewController toViewController:toViewController duration:ANIMATION_DURATION_IN_SECONDS
+                               options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
         [fromViewController removeFromParentViewController];
         [toViewController didMoveToParentViewController:self];
     }];

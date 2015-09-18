@@ -10,7 +10,6 @@
 		841A09051B9102000096174D /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A09041B9102000096174D /* NSError+Error.m */; };
 		84251CEF1B7FD0A9005F646C /* SANMoviesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84251CD81B7FD0A9005F646C /* SANMoviesCell.m */; };
 		84251CF01B7FD0A9005F646C /* SANDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 84251CDB1B7FD0A9005F646C /* SANDataSource.m */; };
-		84251CF11B7FD0A9005F646C /* SANMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 84251CDE1B7FD0A9005F646C /* SANMovie.m */; };
 		84251CF21B7FD0A9005F646C /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84251CE21B7FD0A9005F646C /* 1.jpg */; };
 		84251CF31B7FD0A9005F646C /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84251CE31B7FD0A9005F646C /* 10.jpg */; };
 		84251CF41B7FD0A9005F646C /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84251CE41B7FD0A9005F646C /* 2.jpg */; };
@@ -27,7 +26,6 @@
 		84273B8D1B8B667C007EF7E2 /* SANContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B8A1B8B667C007EF7E2 /* SANContainerViewController.m */; };
 		84273B901B8B668F007EF7E2 /* SANDataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84273B8F1B8B668F007EF7E2 /* SANDataSource.plist */; };
 		84273B971B8B66D9007EF7E2 /* SANInputModelValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B921B8B66D9007EF7E2 /* SANInputModelValidator.m */; };
-		84273B981B8B66D9007EF7E2 /* SANMovieFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B941B8B66D9007EF7E2 /* SANMovieFactory.m */; };
 		84273B9C1B8B6700007EF7E2 /* SANCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84273B9B1B8B6700007EF7E2 /* SANCollectionViewCell.m */; };
 		843EF4DE1B76A5E300BB3D72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF4DD1B76A5E300BB3D72 /* main.m */; };
 		843EF4E11B76A5E300BB3D72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF4E01B76A5E300BB3D72 /* AppDelegate.m */; };
@@ -35,6 +33,9 @@
 		843EF4E91B76A5E300BB3D72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843EF4E81B76A5E300BB3D72 /* Images.xcassets */; };
 		843EF4EC1B76A5E300BB3D72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843EF4EA1B76A5E300BB3D72 /* LaunchScreen.xib */; };
 		843EF4F81B76A5E300BB3D72 /* BestMoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 843EF4F71B76A5E300BB3D72 /* BestMoviesTests.m */; };
+		8440A7EA1BA8B74A00A8B342 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8440A7E91BA8B74A00A8B342 /* CoreData.framework */; };
+		8440A7ED1BA8B91A00A8B342 /* BestMovies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8440A7EB1BA8B91A00A8B342 /* BestMovies.xcdatamodeld */; };
+		8440A7F01BA8BE1500A8B342 /* SANMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440A7EF1BA8BE1500A8B342 /* SANMovie.m */; };
 		84584B8F1B77FCDB004E36FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 84584B8E1B77FCDB004E36FB /* .gitignore */; };
 		8465554B1B774EDD00DC31C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8465554A1B774EDD00DC31C4 /* UIKit.framework */; };
 		84DD779B1B9A31B00065E3BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84DD779A1B9A31B00065E3BC /* Localizable.strings */; };
@@ -57,8 +58,6 @@
 		84251CD81B7FD0A9005F646C /* SANMoviesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANMoviesCell.m; sourceTree = "<group>"; };
 		84251CDA1B7FD0A9005F646C /* SANDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANDataSource.h; sourceTree = "<group>"; };
 		84251CDB1B7FD0A9005F646C /* SANDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANDataSource.m; sourceTree = "<group>"; };
-		84251CDD1B7FD0A9005F646C /* SANMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANMovie.h; sourceTree = "<group>"; };
-		84251CDE1B7FD0A9005F646C /* SANMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANMovie.m; sourceTree = "<group>"; };
 		84251CE21B7FD0A9005F646C /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		84251CE31B7FD0A9005F646C /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		84251CE41B7FD0A9005F646C /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
@@ -71,7 +70,6 @@
 		84251CEB1B7FD0A9005F646C /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
 		84251CED1B7FD0A9005F646C /* SANTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANTableViewController.h; sourceTree = "<group>"; };
 		84251CEE1B7FD0A9005F646C /* SANTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANTableViewController.m; sourceTree = "<group>"; };
-		8426173E1B9782DB00302FB9 /* SANNotificationsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANNotificationsConstants.h; sourceTree = "<group>"; };
 		84273B851B8B667C007EF7E2 /* SANAddMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANAddMovieViewController.h; sourceTree = "<group>"; };
 		84273B861B8B667C007EF7E2 /* SANAddMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANAddMovieViewController.m; sourceTree = "<group>"; };
 		84273B871B8B667C007EF7E2 /* SANCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANCollectionViewController.h; sourceTree = "<group>"; };
@@ -81,8 +79,6 @@
 		84273B8F1B8B668F007EF7E2 /* SANDataSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SANDataSource.plist; sourceTree = "<group>"; };
 		84273B911B8B66D9007EF7E2 /* SANInputModelValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANInputModelValidator.h; sourceTree = "<group>"; };
 		84273B921B8B66D9007EF7E2 /* SANInputModelValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANInputModelValidator.m; sourceTree = "<group>"; };
-		84273B931B8B66D9007EF7E2 /* SANMovieFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANMovieFactory.h; sourceTree = "<group>"; };
-		84273B941B8B66D9007EF7E2 /* SANMovieFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANMovieFactory.m; sourceTree = "<group>"; };
 		84273B9A1B8B6700007EF7E2 /* SANCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANCollectionViewCell.h; sourceTree = "<group>"; };
 		84273B9B1B8B6700007EF7E2 /* SANCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANCollectionViewCell.m; sourceTree = "<group>"; };
 		843EF4D81B76A5E300BB3D72 /* BestMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +92,10 @@
 		843EF4F11B76A5E300BB3D72 /* BestMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		843EF4F61B76A5E300BB3D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843EF4F71B76A5E300BB3D72 /* BestMoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BestMoviesTests.m; sourceTree = "<group>"; };
+		8440A7E91BA8B74A00A8B342 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8440A7EC1BA8B91A00A8B342 /* BestMovies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BestMovies.xcdatamodel; sourceTree = "<group>"; };
+		8440A7EE1BA8BE1500A8B342 /* SANMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SANMovie.h; sourceTree = "<group>"; };
+		8440A7EF1BA8BE1500A8B342 /* SANMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SANMovie.m; sourceTree = "<group>"; };
 		84584B8E1B77FCDB004E36FB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8465554A1B774EDD00DC31C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		84DD779A1B9A31B00065E3BC /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -106,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8440A7EA1BA8B74A00A8B342 /* CoreData.framework in Frameworks */,
 				8465554B1B774EDD00DC31C4 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,8 +153,8 @@
 		84251CDC1B7FD0A9005F646C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				84251CDD1B7FD0A9005F646C /* SANMovie.h */,
-				84251CDE1B7FD0A9005F646C /* SANMovie.m */,
+				8440A7EE1BA8BE1500A8B342 /* SANMovie.h */,
+				8440A7EF1BA8BE1500A8B342 /* SANMovie.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,9 +244,6 @@
 				843EF4E01B76A5E300BB3D72 /* AppDelegate.m */,
 				84273B911B8B66D9007EF7E2 /* SANInputModelValidator.h */,
 				84273B921B8B66D9007EF7E2 /* SANInputModelValidator.m */,
-				84273B931B8B66D9007EF7E2 /* SANMovieFactory.h */,
-				84273B941B8B66D9007EF7E2 /* SANMovieFactory.m */,
-				8426173E1B9782DB00302FB9 /* SANNotificationsConstants.h */,
 				84251CD61B7FD0A9005F646C /* Cells */,
 				84251CD91B7FD0A9005F646C /* Data */,
 				84251CDC1B7FD0A9005F646C /* Models */,
@@ -255,6 +253,7 @@
 				843EF4E81B76A5E300BB3D72 /* Images.xcassets */,
 				843EF4EA1B76A5E300BB3D72 /* LaunchScreen.xib */,
 				843EF4DB1B76A5E300BB3D72 /* Supporting Files */,
+				8440A7EB1BA8B91A00A8B342 /* BestMovies.xcdatamodeld */,
 			);
 			path = BestMovies;
 			sourceTree = "<group>";
@@ -289,6 +288,7 @@
 		8465554D1B774FD100DC31C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8440A7E91BA8B74A00A8B342 /* CoreData.framework */,
 				8465554A1B774EDD00DC31C4 /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -408,14 +408,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				843EF4E11B76A5E300BB3D72 /* AppDelegate.m in Sources */,
-				84273B981B8B66D9007EF7E2 /* SANMovieFactory.m in Sources */,
 				843EF4DE1B76A5E300BB3D72 /* main.m in Sources */,
 				84251CEF1B7FD0A9005F646C /* SANMoviesCell.m in Sources */,
 				84273B8D1B8B667C007EF7E2 /* SANContainerViewController.m in Sources */,
-				84251CF11B7FD0A9005F646C /* SANMovie.m in Sources */,
 				84251CFC1B7FD0A9005F646C /* SANTableViewController.m in Sources */,
 				84273B8C1B8B667C007EF7E2 /* SANCollectionViewController.m in Sources */,
+				8440A7ED1BA8B91A00A8B342 /* BestMovies.xcdatamodeld in Sources */,
 				841A09051B9102000096174D /* NSError+Error.m in Sources */,
+				8440A7F01BA8BE1500A8B342 /* SANMovie.m in Sources */,
 				84251CF01B7FD0A9005F646C /* SANDataSource.m in Sources */,
 				84273B971B8B66D9007EF7E2 /* SANInputModelValidator.m in Sources */,
 				84273B8B1B8B667C007EF7E2 /* SANAddMovieViewController.m in Sources */,
@@ -634,6 +634,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8440A7EB1BA8B91A00A8B342 /* BestMovies.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8440A7EC1BA8B91A00A8B342 /* BestMovies.xcdatamodel */,
+			);
+			currentVersion = 8440A7EC1BA8B91A00A8B342 /* BestMovies.xcdatamodel */;
+			path = BestMovies.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 843EF4D01B76A5E300BB3D72 /* Project object */;
 }

@@ -18,7 +18,7 @@
 @implementation SANCollectionViewCell
 
 - (void)setupWithMovie:(SANMovie *)movie {
-    self.imageView.image = movie.avatarImage;
+    self.imageView.image = [UIImage imageNamed:movie.avatarImagePath]; 
 }
 
 @end

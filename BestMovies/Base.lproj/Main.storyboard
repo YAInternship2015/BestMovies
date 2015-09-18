@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IRd-Uk-zHS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="-168"/>
+            <point key="canvasLocation" x="203" y="-168"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="qyH-V8-4G3">
@@ -194,11 +194,17 @@
                         <connections>
                             <outlet property="dataSource" destination="NrP-gg-yft" id="Axm-KV-NXU"/>
                             <outlet property="delegate" destination="NrP-gg-yft" id="tKI-6C-NCM"/>
+                            <outletCollection property="gestureRecognizers" destination="DVm-QB-8Np" appends="YES" id="t0H-3y-6If"/>
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="RJl-dv-EFZ"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="879-il-Kbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="DVm-QB-8Np">
+                    <connections>
+                        <action selector="handleLongPress:" destination="NrP-gg-yft" id="7YN-eQ-nKr"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="572" y="-560"/>
         </scene>

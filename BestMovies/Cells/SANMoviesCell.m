@@ -19,7 +19,7 @@
 @implementation SANMoviesCell
 
 - (void)setupWithMovie:(SANMovie *)movie {
-    self.imageView.image = movie.avatarImage;
+    self.imageView.image = [UIImage imageNamed:movie.avatarImagePath];
     self.nameLabel.text = movie.name;
 }
 

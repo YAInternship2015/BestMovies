@@ -8,111 +8,187 @@
 
 #import "SANDataSource.h"
 #import "SANMovie.h"
-#import "SANNotificationsConstants.h"
 
-@interface SANDataSource() 
+@interface SANDataSource () 
 
-@property (nonatomic, strong) NSArray *moviesArray;
-@property (nonatomic, strong) NSString *path;
-@property (nonatomic, weak) id<SANModelsDataSourceDelegate> delegate;
+@property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, strong, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, weak) id<NSFetchedResultsControllerDelegate> delegate;
 
 @end
 
 @implementation SANDataSource
 
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
 #pragma mark - Lifecycle
 
-- (instancetype)init {
+- (instancetype)initWithDelegate:(id<NSFetchedResultsControllerDelegate>)delegate {
     self = [super init];
-    if (self) {
-        [self writeMovieFromPlistBundleToDocuments];
-        self.moviesArray = [self movieModelsFromFile];
-  
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(movieTitleDidChanged:)
-                                                     name:SANDataFileContentDidChangeNotification
-                                                   object:nil];
-    }
-    return self;
-}
-
-- (instancetype)initWithDelegate:(id<SANModelsDataSourceDelegate>)delegate {
-    self = [self init];
     if (self) {
         self.delegate = delegate;
     }
     return self;
 }
 
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+#pragma mark - FetchedResultsController
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSManagedObjectContext *context = self.managedObjectContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Configure the request's entity, and optionally its predicate.
+    
+    NSEntityDescription* description =
+    [NSEntityDescription entityForName:@"SANMovie"
+                inManagedObjectContext:self.managedObjectContext];
+    
+    [fetchRequest setEntity:description];
+    [fetchRequest setFetchBatchSize:20];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc]
+                                     initWithFetchRequest:fetchRequest
+                                     managedObjectContext:context
+                                     sectionNameKeyPath:nil
+                                     cacheName:nil];
+    
+    self.fetchedResultsController.delegate = self.delegate;
+    
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        NSLog(@"%@, %@", error, [error userInfo]);
+    }
+    
+    return _fetchedResultsController;
 }
 
 #pragma mark - Methods
 
 - (NSInteger)moviesCount {
-    return [self.moviesArray count];
+    if ([[self.fetchedResultsController sections] count] > 0) {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:0];
+        return [sectionInfo numberOfObjects];
+    } else
+        return 0;
 }
 
-- (SANMovie *)movieAtIndex:(NSInteger)index {
-    return [self.moviesArray objectAtIndex:index];
-}
+- (void)addModelWithImagePath:(NSString *)imagePath name:(NSString *)name {
+    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name]
+                                                                      inManagedObjectContext:context];
 
-- (void)writeMovieFromPlistBundleToDocuments {
-    NSError *error;
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    self.path = [documentsDirectory stringByAppendingPathComponent:@"data.plist"];
+    [newManagedObject setValue:imagePath forKey:@"avatarImagePath"];
+    [newManagedObject setValue:name forKey:@"name"];
     
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-
-    if (![fileManager fileExistsAtPath:self.path]) {
-        NSString *bundle = [[NSBundle mainBundle] pathForResource:@"SANDataSource" ofType:@"plist"];
-        [fileManager copyItemAtPath:bundle toPath: self.path error:&error];
+    // Save the context.
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
     }
 }
 
-- (NSArray *)movieModelsFromFile {
-    NSMutableDictionary *savedStock = [[NSMutableDictionary alloc]initWithContentsOfFile:self.path];
-    NSArray *imgArray = [savedStock valueForKey:@"images"];
-    NSArray *nameArray = [savedStock valueForKey:@"names"];
-    NSMutableArray *array = [NSMutableArray array];
-    for (NSInteger i = 0; i < [nameArray count]; i++) {
-        UIImage *image = [UIImage imageNamed:[imgArray objectAtIndex:i]];
-        NSString *name = [nameArray objectAtIndex:i];
-        SANMovie *movie = [[SANMovie alloc] initWithImage:image name:name];
-        [array addObject:movie];
+- (void)deleteModelWithIndex:(NSIndexPath *)index {
+    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+    [context deleteObject:[self.fetchedResultsController objectAtIndexPath:index]];
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
     }
-    return array;
 }
 
-- (void)saveModel:(SANMovie *)model {
-    NSMutableDictionary *savedStock = [[NSMutableDictionary alloc]initWithContentsOfFile:self.path];
-    NSMutableArray *imgArray = [savedStock valueForKey:@"images"];
-    NSMutableArray *titleArray = [savedStock valueForKey:@"names"];
-    
-    [titleArray addObject:model.name];
-    
-    NSInteger randomNumber = arc4random() % 10 + 1;
-    
-    [imgArray addObject:[NSString stringWithFormat:@"%ld.jpg", (long)randomNumber]];
-    
-    NSDictionary *dict = @{
-                           @"images" : imgArray,
-                           @"names" : titleArray
-                           };
-    [dict writeToFile:self.path atomically:YES];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:SANDataFileContentDidChangeNotification object:nil];
+- (SANMovie *)modelWithIndexPath:(NSIndexPath *)indexPath {
+    SANMovie *movie = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    return movie;
 }
 
-#pragma mark - Notification
+#pragma mark - Core Data stack
 
-- (void)movieTitleDidChanged:(NSNotification *)notification {
-    self.moviesArray = [self movieModelsFromFile];
-    [self.delegate dataWasChanged:self];
+- (NSURL *)applicationDocumentsDirectory {
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "Ignatenko.AAAA" in the application's documents directory.
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (NSManagedObjectModel *)managedObjectModel {
+    // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
+    if (_managedObjectModel != nil) {
+        return _managedObjectModel;
+    }
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"BestMovies" withExtension:@"momd"];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it.
+    if (_persistentStoreCoordinator != nil) {
+        return _persistentStoreCoordinator;
+    }
+    
+    // Create the coordinator and store
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"BestMovies.sqlite"];
+    NSError *error = nil;
+    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+        // Report any error we got.
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
+        dict[NSLocalizedFailureReasonErrorKey] = failureReason;
+        dict[NSUnderlyingErrorKey] = error;
+        error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+        // Replace this with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return _persistentStoreCoordinator;
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
+    if (_managedObjectContext != nil) {
+        return _managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (!coordinator) {
+        return nil;
+    }
+    _managedObjectContext = [[NSManagedObjectContext alloc] init];
+    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    return _managedObjectContext;
+}
+
+#pragma mark - Core Data Saving support
+
+- (void)saveContext {
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    if (managedObjectContext != nil) {
+        NSError *error = nil;
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
 }
 
 @end
-
-

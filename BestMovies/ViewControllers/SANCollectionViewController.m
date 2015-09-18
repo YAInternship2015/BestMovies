@@ -10,7 +10,7 @@
 #import "SANDataSource.h"
 #import "SANCollectionViewCell.h"
 
-@interface SANCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, SANModelsDataSourceDelegate>
+@interface SANCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) SANDataSource *dataSource;
 
@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataSource = [[SANDataSource alloc] initWithDelegate:self];
+    self.dataSource = [[SANDataSource alloc] init];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -38,15 +38,40 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * const reuseIdentifier = @"SANCollectionViewCell";
     SANCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    SANMovie *movie = [self.dataSource movieAtIndex:indexPath.item];
-    [cell setupWithMovie:movie];
+    [cell setupWithMovie:[self.dataSource modelWithIndexPath:indexPath]];
     return cell;
 }
 
-#pragma mark - SANModelsDataSourceDelegate
+#pragma mark - Methods
 
-- (void)dataWasChanged:(SANDataSource *)data {
-    [self.collectionView reloadData];
+- (IBAction)handleLongPress:(UILongPressGestureRecognizer *)sender {
+    CGPoint locationPoint = [sender locationInView:self.collectionView];
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:locationPoint];
+    if (sender.state == UIGestureRecognizerStateBegan && indexPath) {
+        [self.dataSource deleteModelWithIndex:indexPath];
+    }
+}
+
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+        
+            break;
+        case NSFetchedResultsChangeDelete:
+
+            break;
+        case NSFetchedResultsChangeUpdate:
+            break;
+        case NSFetchedResultsChangeMove:
+            break;
+    }
 }
 
 @end

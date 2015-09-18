@@ -8,7 +8,6 @@
 
 #import "SANAddMovieViewController.h"
 #import "SANInputModelValidator.h"
-#import "SANMovieFactory.h"
 #import "SANDataSource.h"
 
 @interface SANAddMovieViewController () <UITextFieldDelegate>
@@ -49,10 +48,10 @@
 }
 
 - (void)saveData {
-    SANMovie *movie = [SANMovieFactory movieWithText:self.addNameField.text image:nil];
-    
+    NSInteger randomValue = arc4random_uniform(9) + 1;
+    NSString *randomImagePath = [NSString stringWithFormat:@"%ld.jpg", (long)randomValue];
     SANDataSource *data = [SANDataSource new];
-    [data saveModel:movie];
+    [data addModelWithImagePath:randomImagePath name:self.addNameField.text];
 }
 
 #pragma mark - Actions
