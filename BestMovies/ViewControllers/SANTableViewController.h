@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class SANDataSource;
+
 @interface SANTableViewController : UITableViewController
+
+@property (nonatomic, strong) SANDataSource *dataSource;
 
 @end

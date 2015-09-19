@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class SANDataSource;
+
 @interface SANCollectionViewController : UICollectionViewController
+
+@property (nonatomic, strong) SANDataSource *dataSource;
 
 @end

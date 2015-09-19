@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class SANDataSource;
+
 @interface SANAddMovieViewController : UIViewController
+
+@property (nonatomic, strong) SANDataSource *dataSource;
 
 @end
 

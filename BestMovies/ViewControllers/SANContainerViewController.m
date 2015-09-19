@@ -9,6 +9,7 @@
 #import "SANContainerViewController.h"
 #import "SANTableViewController.h"
 #import "SANCollectionViewController.h"
+#import "SANAddMovieViewController.h"
 
 #define ANIMATION_DURATION_IN_SECONDS 0.25
 
@@ -67,6 +68,19 @@ static NSString * const SANCollectionControllerStoryboardID = @"SANCollectionVie
         [toViewController didMoveToParentViewController:self];
     }];
     self.navigationController.navigationBar.translucent = YES;
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"pushAddMovieViewController"]) {
+        SANAddMovieViewController *addViewController = segue.destinationViewController;
+        if (self.switchFlagViewController) {
+            addViewController.dataSource = self.tableVC.dataSource;
+        } else {
+            addViewController.dataSource = self.collectionVC.dataSource;
+        }
+    }
 }
 
 @end

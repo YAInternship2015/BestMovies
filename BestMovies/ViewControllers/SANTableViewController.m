@@ -10,9 +10,9 @@
 #import "SANDataSource.h"
 #import "SANMoviesCell.h"
 
-@interface SANTableViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
-
-@property (nonatomic, strong) SANDataSource *dataSource;
+@interface SANTableViewController () <UITableViewDataSource,
+                                      UITableViewDelegate,
+                                      NSFetchedResultsControllerDelegate>
 
 @end
 
@@ -57,11 +57,8 @@
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath {
     
-    UITableView *tableView = self.tableView;
-    
     switch(type) {
         case NSFetchedResultsChangeInsert:
-#warning !!!
             [self.tableView insertRowsAtIndexPaths:@[newIndexPath]
                                   withRowAnimation:UITableViewRowAnimationFade];
             break;

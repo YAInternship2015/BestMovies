@@ -43,7 +43,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4rY-iu-kRd">
                             <color key="tintColor" red="0.62440814389999999" green="0.07816801625" blue="0.3039341646" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="cnc-4Y-v6d" kind="push" id="yCM-3V-qfe"/>
+                                <segue destination="cnc-4Y-v6d" kind="push" identifier="pushAddMovieViewController" id="yCM-3V-qfe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -50,8 +50,8 @@
 - (void)saveData {
     NSInteger randomValue = arc4random_uniform(9) + 1;
     NSString *randomImagePath = [NSString stringWithFormat:@"%ld.jpg", (long)randomValue];
-    SANDataSource *data = [SANDataSource new];
-    [data addModelWithImagePath:randomImagePath name:self.addNameField.text];
+
+    [self.dataSource addModelWithImagePath:randomImagePath name:self.addNameField.text];
 }
 
 #pragma mark - Actions
