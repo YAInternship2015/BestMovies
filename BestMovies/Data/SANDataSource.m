@@ -21,6 +21,7 @@
 
 @implementation SANDataSource
 
+#warning @synthesize можно не писать
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
@@ -52,6 +53,7 @@
                 inManagedObjectContext:self.managedObjectContext];
     
     [fetchRequest setEntity:description];
+#warning размер "пачки" надо объявить константой
     [fetchRequest setFetchBatchSize:20];
     
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
