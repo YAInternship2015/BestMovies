@@ -14,10 +14,15 @@
 
 @property (nonatomic, weak) IBOutlet UITextField *addNameField;
 @property (nonatomic, strong) SANInputModelValidator *validator;
+@property (nonatomic, strong) SANDataSource *dataSource;
 
 @end
 
 @implementation SANAddMovieViewController
+
+- (void)setDataSource:(SANDataSource *)dataSource {
+    _dataSource = dataSource;
+}
 
 #pragma mark - Lifecycle
 
@@ -50,7 +55,7 @@
 - (void)saveData {
     NSInteger randomValue = arc4random_uniform(9) + 1;
     NSString *randomImagePath = [NSString stringWithFormat:@"%ld.jpg", (long)randomValue];
-
+    
     [self.dataSource addModelWithImagePath:randomImagePath name:self.addNameField.text];
 }
 
@@ -58,7 +63,6 @@
 
 - (IBAction)actionSaveMovie:(UIBarButtonItem *)sender {
     [self validationInputText];
-    
 }
 
 #pragma mark - UITextFieldDelegate

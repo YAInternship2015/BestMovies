@@ -9,22 +9,19 @@
 #import "SANDataSource.h"
 #import "SANMovie.h"
 
+#define FETCH_BATCH_SIZE 20
+
 @interface SANDataSource () 
 
-@property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, strong, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, weak) id<NSFetchedResultsControllerDelegate> delegate;
 
 @end
 
 @implementation SANDataSource
-
-#warning @synthesize можно не писать
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 #pragma mark - Lifecycle
 
@@ -53,8 +50,8 @@
                 inManagedObjectContext:self.managedObjectContext];
     
     [fetchRequest setEntity:description];
-#warning размер "пачки" надо объявить константой
-    [fetchRequest setFetchBatchSize:20];
+
+    [fetchRequest setFetchBatchSize:FETCH_BATCH_SIZE];
     
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
@@ -103,7 +100,7 @@
     }
 }
 
-- (void)deleteModelWithIndex:(NSIndexPath *)index {
+-(void)deleteModelAtIndex:(NSIndexPath *)index {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     [context deleteObject:[self.fetchedResultsController objectAtIndexPath:index]];
     
@@ -114,7 +111,7 @@
     }
 }
 
-- (SANMovie *)modelWithIndexPath:(NSIndexPath *)indexPath {
+- (SANMovie *)modelAtIndexPath:(NSIndexPath *)indexPath {
     SANMovie *movie = [self.fetchedResultsController objectAtIndexPath:indexPath];
     return movie;
 }
@@ -122,7 +119,6 @@
 #pragma mark - Core Data stack
 
 - (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "Ignatenko.AAAA" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
@@ -159,7 +155,6 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
     return _persistentStoreCoordinator;
 }
 

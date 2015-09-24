@@ -16,10 +16,8 @@
 - (NSInteger)moviesCount;
 - (instancetype)initWithDelegate:(id<NSFetchedResultsControllerDelegate>)delegate;
 - (void)addModelWithImagePath:(NSString *)imagePath name:(NSString *)name;
-#warning deleteModelAtIndex
-- (void)deleteModelWithIndex:(NSIndexPath *)index;
-#warning modelAtIndexPath:
-- (SANMovie *)modelWithIndexPath:(NSIndexPath *)indexPath;
+- (void)deleteModelAtIndex:(NSIndexPath *)index;
+- (SANMovie *)modelAtIndexPath:(NSIndexPath *)indexPath;
 - (void)saveContext;
 
 @end

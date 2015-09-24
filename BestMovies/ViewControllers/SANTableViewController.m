@@ -14,9 +14,17 @@
                                       UITableViewDelegate,
                                       NSFetchedResultsControllerDelegate>
 
+@property (nonatomic, strong) SANDataSource *dataSource;
+
 @end
 
 @implementation SANTableViewController
+
+#pragma mark Getters
+
+- (SANDataSource *)dataSource {
+    return _dataSource;
+}
 
 #pragma mark - Lifecycle
 
@@ -34,14 +42,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"SANTableViewCell";
     SANMoviesCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    [cell setupWithMovie:[self.dataSource modelWithIndexPath:indexPath]];
+    [cell setupWithMovie:[self.dataSource modelAtIndexPath:indexPath]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
                                             forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.dataSource deleteModelWithIndex:indexPath];
+        [self.dataSource deleteModelAtIndex:indexPath];
     }
 }
 

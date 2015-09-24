@@ -12,7 +12,6 @@
 
 @interface SANCollectionViewController : UICollectionViewController
 
-#warning это свойство не должно быть в *.h, перенесите его в *.m и в *.h оставьте только сеттер. Это касается и остальных контроллеров
-@property (nonatomic, strong) SANDataSource *dataSource;
+- (SANDataSource *)dataSource;
 
 @end

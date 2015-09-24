@@ -76,9 +76,9 @@ static NSString * const SANCollectionControllerStoryboardID = @"SANCollectionVie
     if ([segue.identifier isEqualToString:@"pushAddMovieViewController"]) {
         SANAddMovieViewController *addViewController = segue.destinationViewController;
         if (self.switchFlagViewController) {
-            addViewController.dataSource = self.tableVC.dataSource;
+            addViewController.dataSource = [self.tableVC dataSource];
         } else {
-            addViewController.dataSource = self.collectionVC.dataSource;
+            addViewController.dataSource = [self.collectionVC dataSource];
         }
     }
 }

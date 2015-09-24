@@ -97,7 +97,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageView" destination="tuD-yO-9HE" id="zcV-Rv-h1E"/>
+                                    <outlet property="avatarImageView" destination="tuD-yO-9HE" id="26J-YG-iTE"/>
                                     <outlet property="nameLabel" destination="fQa-eq-261" id="wtn-zh-eNh"/>
                                 </connections>
                             </tableViewCell>

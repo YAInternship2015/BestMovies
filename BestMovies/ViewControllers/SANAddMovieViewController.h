@@ -12,7 +12,7 @@
 
 @interface SANAddMovieViewController : UIViewController
 
-@property (nonatomic, strong) SANDataSource *dataSource;
+- (void)setDataSource:(SANDataSource *)dataSource;
 
 @end
 

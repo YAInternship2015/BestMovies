@@ -12,6 +12,6 @@
 
 @interface SANTableViewController : UITableViewController
 
-@property (nonatomic, strong) SANDataSource *dataSource;
+- (SANDataSource *)dataSource;
 
 @end

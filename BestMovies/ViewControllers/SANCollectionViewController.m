@@ -15,10 +15,17 @@
                                             NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *itemChanges;
+@property (nonatomic, strong) SANDataSource *dataSource;
 
 @end
 
 @implementation SANCollectionViewController
+
+#pragma mark - Getters
+
+- (SANDataSource *)dataSource {
+    return _dataSource;
+}
 
 #pragma mark - Lifecycle
 
@@ -40,7 +47,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * const reuseIdentifier = @"SANCollectionViewCell";
     SANCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    [cell setupWithMovie:[self.dataSource modelWithIndexPath:indexPath]];
+    [cell setupWithMovie:[self.dataSource modelAtIndexPath:indexPath]];
     return cell;
 }
 
@@ -50,7 +57,7 @@
     CGPoint locationPoint = [sender locationInView:self.collectionView];
     NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:locationPoint];
     if (sender.state == UIGestureRecognizerStateBegan && indexPath) {
-        [self.dataSource deleteModelWithIndex:indexPath];
+        [self.dataSource deleteModelAtIndex:indexPath];
     }
 }
 
